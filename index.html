@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gmail Sidebar Demo</title>
+    <script defer src="main.js"></script>
+    <link href="style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="logo">
+        <div class="logo__drawer-icon-button" data-tooltip="Main Menu">
+          <img class="drawer-icon" src="menu-bar.png" alt="Drawer Icon"/>
+        </div>
+        <div class="logo__button">
+          <span class="logo__icon">📬</span>
+          <span class="logo__title">Mail App</span>
+        </div>
+      </div>
+
+      <div class="sidebar">
+        <div class="compose_button">
+          <span class="compose-button__logo">🖊️</span>
+          <span class="compose-button__title">Compose</span>
+        </div>
+
+        <app-sidebar-button text="Inbox" unreadCount="">
+          <slot slot="¡con">📥</slot>
+        </app-sidebar-button>
+        <app-sidebar-button text="Starred" unreadCount="">
+          <slot slot="¡con">⭐️</slot>
+        </app-sidebar-button>
+        <app-sidebar-button text="Snoozed" unreadCount="">
+          <slot slot="¡con">🕛</slot>
+        </app-sidebar-button>
+        <app-sidebar-button text="Sent" unreadCount="">
+          <slot slot="¡con">➡️</slot>
+        </app-sidebar-button>
+        <app-sidebar-button text="Draft" unreadCount="1">
+          <slot slot="¡con">📄</slot>
+        </app-sidebar-button>
+      </div>
+    </div>
+  </body>
+</html>
